@@ -4,59 +4,23 @@
 //The text of the button should should switch to say “light mode”
 //You should be able to toggle between light and dark modes 
 //You can use an online IDE or VS code 
-const modeToggle = document.querySelector('#mode-toggle');
-const body = document.querySelector('body');
-
-modeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  if (modeToggle.textContent === 'Dark Mode') {
-    modeToggle.textContent = 'Light Mode';
-  } else {
-    modeToggle.textContent = 'Dark Mode';
-  }
-});
-//I couldn't find a way to make to code below work
-/* const modeToggle = document.querySelector('#mode-toggle');
-const body = document.querySelector('body');
-
-function toggleDarkMode() {
-  const isDarkMode = 
-    body.classList.toggle('dark-mode');
-  if (isDarkMode) {
-    //switch to light mode
-    body.classList.remove('dark-mode');
-    body.classList.add('light-mode');
-    modeToggle.innerText = 'Light Mode';
-
-  } else { 
-    //switch to dark mode
-    body.classList.remove('light-mode');
-    body.classList.add('dark-mode');
-    modeToggle.textContent = 'Dark Mode';    
-  }
-}
-
-modeToggle.addEventListener('click', toggleDarkMode);
-/*
-ignore container for now
 const modeToggle = document.getElementById('modeToggle');
 const container = document.getElementById('container');
-
+//function to toggle to dark mode
 function toggleDarkMode() {
-  const isDarkMode = 
-    container.classList.toggle('darkMode');
+  const isDarkMode = container.classList.contains('darkMode');
   if (isDarkMode) {
     //switch to light mode
     container.classList.remove('darkMode');
     container.classList.add('lightMode');
-    modeToggle.innerText = 'Dark Mode';
-
-  } else { 
+    modeToggle.innerText = 'Switch to Dark Mode';
+  
+} else {
     //switch to dark mode
     container.classList.remove('lightMode');
     container.classList.add('darkMode');
-    modeToggle.innerText = 'Light Mode';    
+    modeToggle.innerText = 'Switch to Light Mode';
   }
 }
-
-modeToggle.addEventListener('click', toggleDarkMode);*/
+//add event listener to toggle button
+modeToggle.addEventListener('click', toggleDarkMode);
